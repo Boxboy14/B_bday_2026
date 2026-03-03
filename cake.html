@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cake Time 🎉</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-blur blur-1"></div>
+    <div class="bg-blur blur-2"></div>
+
+    <main class="cake-stage page-shell">
+      <h2>Time to cut your birthday cake, Bhakti! 🥳</h2>
+      <div id="cake" class="cake" aria-label="Birthday cake">
+        <div class="cake-top"></div>
+        <div class="cake-layer"></div>
+        <div class="cake-layer layer-2"></div>
+        <div class="cake-base"></div>
+        <div class="candle"></div>
+        <div class="flame" id="flame"></div>
+      </div>
+      <button id="cutCakeBtn" class="cta-btn">Cut the cake 🍰</button>
+      <p id="cakeNote" class="cake-note hidden">Yaaay! Cake cut! Happy Birthday my love 💖</p>
+    </main>
+
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
