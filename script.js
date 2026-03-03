@@ -1,5 +1,5 @@
 const birthdayMessage =
-  "Hey Babe, first of I want wish you a very Happy Birthday. You turn 25 today. You are really getting old now 😂😂. I hope you have a fabulous day. This day is important to me as it is to you because if it was'nt for this day you would have not come in my life. Thank you for always sticking by my side even at my lowest. I promise to stay with you for atleast 50 more birthdays 😂. Once again A Happy Birthday to you ❤️😘. I love you ❤️❤️❤️.";
+  "Hey Babe, first of all I want wish you a very Happy Birthday. You turn 25 today. You are really getting old now 😂😂. I hope you have a fabulous day. This day is important to me as it is to you because if it was'nt for this day you would have not been in my life. Thank you for always sticking by my side even at my lowest. I promise to stay with you for atleast 50 more birthdays 😂. Once again A Happy Birthday to you ❤️😘. I love you ❤️❤️❤️.";
 
 // Replace these with your own photo file paths, for example: "images/photo1.jpg"
 const photoUrls = [
@@ -7,7 +7,7 @@ const photoUrls = [
   "images/bhakti-2.jpg",
   "images/bhakti-3.jpg",
 ];
-  "Hey Babe, first of all I want wish you a very Happy Birthday. You turn 25 today. You are really getting old now 😂😂. I hope you have a fabulous day. This day is important to me as it is to you because if it was'nt for this day you would not have been in my life. Thank you for always sticking by my side even at my lowest. I promise to stay with you for atleast 50 more birthdays 😂. Once again A Happy Birthday to you ❤️😘. I love you ❤️❤️❤️.";
+("Hey Babe, first of all I want wish you a very Happy Birthday. You turn 25 today. You are really getting old now 😂😂. I hope you have a fabulous day. This day is important to me as it is to you because if it was'nt for this day you would not have been in my life. Thank you for always sticking by my side even at my lowest. I promise to stay with you for atleast 50 more birthdays 😂. Once again A Happy Birthday to you ❤️😘. I love you ❤️❤️❤️.");
 
 const revealBtn = document.getElementById("revealBtn");
 const cakePageBtn = document.getElementById("cakePageBtn");
@@ -66,7 +66,9 @@ function renderGallery() {
 function spawnSparkle() {
   const sparkle = document.createElement("span");
   sparkle.className = "sparkle";
-  sparkle.textContent = ["✨", "💖", "🎉", "🌸", "💫"][Math.floor(Math.random() * 5)];
+  sparkle.textContent = ["✨", "💖", "🎉", "🌸", "💫"][
+    Math.floor(Math.random() * 5)
+  ];
   sparkle.style.left = `${Math.random() * 100}vw`;
   sparkle.style.bottom = "-24px";
   sparkle.style.animationDuration = `${3 + Math.random() * 4}s`;
@@ -80,13 +82,21 @@ function startSparkles() {
 }
 
 function spawnConfettiBurst(count) {
-  const colors = ["#ff5ab7", "#ffd24a", "#6df2ff", "#b98cff", "#9eff85", "#ff8e66"];
+  const colors = [
+    "#ff5ab7",
+    "#ffd24a",
+    "#6df2ff",
+    "#b98cff",
+    "#9eff85",
+    "#ff8e66",
+  ];
 
   for (let i = 0; i < count; i += 1) {
     const piece = document.createElement("span");
     piece.className = "confetti";
     piece.style.left = `${Math.random() * 100}vw`;
-    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
     piece.style.animationDuration = `${2.5 + Math.random() * 2.5}s`;
     piece.style.transform = `rotate(${Math.random() * 360}deg)`;
 
