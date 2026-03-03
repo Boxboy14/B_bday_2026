@@ -15,6 +15,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -25,7 +31,6 @@ body {
     radial-gradient(circle at 75% 20%, #b48cff 0%, transparent 30%),
     radial-gradient(circle at 85% 75%, #ff9dd7 0%, transparent 30%),
     linear-gradient(140deg, #3a0b61 0%, #80186f 45%, #a22461 100%);
-  overflow-x: hidden;
   position: relative;
 }
 
@@ -54,7 +59,7 @@ body {
 
 .hero,
 .surprise {
-  width: min(900px, 92vw);
+  width: min(900px, calc(100vw - 2rem));
   margin: 4rem auto;
   text-align: center;
   backdrop-filter: blur(11px);
@@ -75,6 +80,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   padding: 0.55rem 1.1rem;
+  max-width: 100%;
 }
 
 h1,
@@ -134,14 +140,6 @@ h2 {
   animation: fadeInUp 700ms ease;
 }
 
-.message-label {
-  margin: 0.8rem 0 0.35rem;
-  letter-spacing: 0.05em;
-  font-size: 0.85rem;
-  opacity: 0.85;
-  text-transform: uppercase;
-}
-
 .message-output {
   margin: 0 auto 2rem;
   width: min(680px, 95%);
@@ -149,6 +147,8 @@ h2 {
   font-size: 1.08rem;
   color: #fff9ff;
   min-height: 3rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .photo-gallery {
@@ -225,11 +225,75 @@ h2 {
 @media (max-width: 640px) {
   .hero,
   .surprise {
-    margin: 2rem auto;
-    padding: 2rem 1rem;
+    margin: 1.35rem auto;
+    padding: 1.4rem 0.95rem;
+    border-radius: 20px;
+  }
+
+  .date-pill {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    padding: 0.45rem 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 8vw, 2.3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 7.5vw, 2.1rem);
+  }
+
+  .subtitle {
+    font-size: 0.96rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .cta-btn {
+    width: min(260px, 100%);
+    padding: 0.85rem 1rem;
+    font-size: 0.96rem;
   }
 
   .message-output {
-    font-size: 1rem;
+    width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin-bottom: 1.3rem;
+  }
+
+  .photo-gallery {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero,
+  .surprise {
+    width: min(900px, calc(100vw - 1rem));
+    padding: 1.2rem 0.75rem;
+    margin: 0.9rem auto;
+  }
+
+  .blur-1,
+  .blur-2 {
+    filter: blur(70px);
+    transform: scale(0.7);
+  }
+
+  .date-pill {
+    font-size: 0.64rem;
+    padding: 0.4rem 0.55rem;
+  }
+
+  .photo-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-placeholder {
+    font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }
