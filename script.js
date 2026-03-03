@@ -11,20 +11,6 @@ const birthdayMessage =
 // Replace these with your own photo file paths, for example: "images/photo1.jpg"
 const photoUrls = [];
 
-function typeMessage(text) {
-  let i = 0;
-  messageOutput.textContent = "";
-
-  const timer = setInterval(() => {
-    messageOutput.textContent += text[i];
-    i += 1;
-
-    if (i >= text.length) {
-      clearInterval(timer);
-    }
-  }, 30);
-}
-
 function createPhotoCard(src) {
   const card = document.createElement("div");
   card.className = "photo-card";
@@ -84,7 +70,7 @@ revealBtn.addEventListener("click", () => {
   revealBtn.textContent = "Surprise unlocked 💘";
   revealBtn.disabled = true;
 
-  typeMessage(birthdayMessage);
+  messageOutput.textContent = birthdayMessage;
   renderGallery();
 });
 
