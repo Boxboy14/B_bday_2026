@@ -1,5 +1,5 @@
 const birthdayMessage =
-  "Hey Babe, first of I want wish you a very Happy Birthday. You turn 25 today. You are really getting old now 😂😂. I hope you have a fabulous day. This day is important to me as it is to you because if it was'nt for this day you would have not come in my life. Thank you for always sticking by my side even at my lowest. I promise to stay with you for atleast 50 more birthdays 😂. Once again A Happy Birthday to you ❤️😘. I love you ❤️❤️❤️.";
+  "Hey Babe, first of all I want wish you a very Happy Birthday. You turn 25 today. You are really getting old now 😂😂. I hope you have a fabulous day. This day is important to me as it is to you because if it was'nt for this day you would not have been in my life. Thank you for always sticking by my side even at my lowest. I promise to stay with you for atleast 50 more birthdays 😂. Once again A Happy Birthday to you ❤️😘. I love you ❤️❤️❤️.";
 
 // Replace these with your own photo file paths, for example: "images/photo1.jpg"
 const photoUrls = [];
