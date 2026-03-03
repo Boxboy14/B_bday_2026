@@ -16,21 +16,36 @@
     <div class="bg-blur blur-1"></div>
     <div class="bg-blur blur-2"></div>
 
-    <main class="hero">
+    <main id="heroView" class="page-shell view-section">
       <p class="date-pill">Monday · 9 March 2026 · 25th Birthday</p>
       <h1>Hey Babe, I have a surprise for you 💝</h1>
       <p class="subtitle">Made with all my love for the most beautiful soul — Bhakti.</p>
       <button id="revealBtn" class="cta-btn">Click here ✨</button>
     </main>
 
-    <section id="surpriseSection" class="surprise hidden" aria-hidden="true">
+    <section id="surpriseView" class="page-shell view-section hidden" aria-hidden="true">
       <h2>Happy 25th Birthday, Bhakti! 🎂</h2>
       <div id="messageOutput" class="message-output" aria-live="polite"></div>
-
       <div id="gallery" class="photo-gallery"></div>
+      <button id="cakePageBtn" class="cta-btn">Lets cut the cake 🎂</button>
+    </section>
+
+    <section id="cakeView" class="page-shell view-section hidden" aria-hidden="true">
+      <h2>Time to cut your birthday cake, Bhakti! 🥳</h2>
+      <div id="cake" class="cake" aria-label="Birthday cake">
+        <div class="cake-top"></div>
+        <div class="cake-layer"></div>
+        <div class="cake-layer layer-2"></div>
+        <div class="cake-base"></div>
+        <div class="candle"></div>
+        <div class="flame" id="flame"></div>
+      </div>
+      <button id="cutCakeBtn" class="cta-btn">Cut the cake 🍰</button>
+      <p id="cakeNote" class="cake-note hidden">Yaaay! Cake cut! Happy Birthday my love 💖</p>
     </section>
 
     <div id="sparkleLayer" class="sparkle-layer" aria-hidden="true"></div>
+    <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
 
     <script src="script.js"></script>
   </body>
