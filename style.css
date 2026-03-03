@@ -1,6 +1,10 @@
 :root {
+  --pink-100: #ffe5f7;
+  --pink-200: #ffb4e3;
+  --pink-300: #ff89d1;
   --pink-400: #ff65bc;
   --purple-400: #8d48ff;
+  --purple-700: #4f1e89;
   --text-main: #ffffff;
   --text-soft: #ffeef8;
   --glass-bg: rgba(255, 255, 255, 0.16);
@@ -30,18 +34,6 @@ body {
   position: relative;
 }
 
-.page-shell {
-  width: min(900px, calc(100vw - 2rem));
-  margin: 3rem auto;
-  text-align: center;
-  backdrop-filter: blur(11px);
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  border-radius: 28px;
-  box-shadow: 0 22px 42px rgba(52, 5, 77, 0.35);
-  padding: 2.5rem 2rem;
-}
-
 .bg-blur {
   position: fixed;
   border-radius: 50%;
@@ -65,15 +57,30 @@ body {
   bottom: -120px;
 }
 
+.hero,
+.surprise {
+  width: min(900px, calc(100vw - 2rem));
+  margin: 4rem auto;
+  text-align: center;
+  backdrop-filter: blur(11px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  box-shadow: 0 22px 42px rgba(52, 5, 77, 0.35);
+  padding: 2.5rem 2rem;
+}
+
 .date-pill {
   display: inline-block;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #fff;
   background: linear-gradient(100deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.13));
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 999px;
   padding: 0.55rem 1.1rem;
+  max-width: 100%;
 }
 
 h1,
@@ -113,26 +120,40 @@ h2 {
 
 .cta-btn:hover {
   transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 32px rgba(97, 14, 97, 0.55);
 }
 
-.cta-btn:disabled {
-  opacity: 0.75;
-  cursor: not-allowed;
+.cta-btn:active {
+  transform: translateY(1px);
+}
+
+.hidden {
+  display: none;
+}
+
+.surprise {
+  margin-top: 0;
+  padding-top: 2.2rem;
+}
+
+.surprise.show {
+  animation: fadeInUp 700ms ease;
 }
 
 .message-output {
   margin: 0 auto 2rem;
   width: min(680px, 95%);
   line-height: 1.8;
-  font-size: 1.06rem;
+  font-size: 1.08rem;
   color: #fff9ff;
+  min-height: 3rem;
   white-space: normal;
   overflow-wrap: anywhere;
 }
 
 .photo-gallery {
   width: min(800px, 95%);
-  margin: 0 auto 2rem;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 0.9rem;
@@ -155,13 +176,14 @@ h2 {
 .photo-placeholder {
   display: grid;
   place-items: center;
+  text-align: center;
   padding: 1rem;
   font-size: 0.92rem;
+  color: #fff;
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
 }
 
-.sparkle-layer,
-.confetti-layer {
+.sparkle-layer {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -173,95 +195,6 @@ h2 {
   font-size: 1.1rem;
   animation: floatUp linear forwards;
   opacity: 0;
-}
-
-.cake-stage {
-  margin-top: 2.2rem;
-}
-
-.cake {
-  position: relative;
-  width: 210px;
-  height: 220px;
-  margin: 0 auto 1.5rem;
-}
-
-.cake-layer,
-.cake-base,
-.cake-top {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 14px;
-}
-
-.cake-top {
-  top: 55px;
-  width: 118px;
-  height: 30px;
-  background: #ffdef3;
-}
-
-.cake-layer {
-  top: 83px;
-  width: 150px;
-  height: 45px;
-  background: #ff99cf;
-}
-
-.layer-2 {
-  top: 128px;
-  width: 180px;
-  background: #ff7ec2;
-}
-
-.cake-base {
-  top: 174px;
-  width: 210px;
-  height: 22px;
-  background: #ffe9f6;
-}
-
-.candle {
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 12px;
-  height: 42px;
-  border-radius: 20px;
-  background: repeating-linear-gradient(45deg, #ffe455 0, #ffe455 6px, #ff6bb4 6px, #ff6bb4 12px);
-}
-
-.flame {
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 28px;
-  border-radius: 50% 50% 45% 45%;
-  background: radial-gradient(circle at 50% 65%, #ffd85c 20%, #ff8f2d 60%, #ff4e1f 90%);
-  animation: flicker 0.45s infinite alternate;
-}
-
-.cake-note {
-  margin-top: 1rem;
-  font-size: 1.08rem;
-  color: #fff8e8;
-}
-
-.confetti {
-  position: absolute;
-  top: -20px;
-  width: 10px;
-  height: 18px;
-  border-radius: 3px;
-  animation: confettiFall linear forwards;
-}
-
-.hidden {
-  display: none;
 }
 
 @keyframes floatUp {
@@ -278,40 +211,29 @@ h2 {
   }
 }
 
-@keyframes confettiFall {
-  0% {
-    transform: translateY(-10vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh) rotate(540deg);
-    opacity: 0.85;
-  }
-}
-
-@keyframes flicker {
+@keyframes fadeInUp {
   from {
-    transform: translateX(-50%) scale(0.95);
-    filter: brightness(0.95);
+    opacity: 0;
+    transform: translateY(22px);
   }
   to {
-    transform: translateX(-50%) scale(1.08);
-    filter: brightness(1.08);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 640px) {
-  .page-shell {
-    width: min(900px, calc(100vw - 1rem));
-    margin: 1rem auto;
-    padding: 1.35rem 0.8rem;
+  .hero,
+  .surprise {
+    margin: 1.35rem auto;
+    padding: 1.4rem 0.95rem;
     border-radius: 20px;
   }
 
   .date-pill {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     letter-spacing: 0.05em;
-    padding: 0.42rem 0.62rem;
+    padding: 0.45rem 0.75rem;
   }
 
   h1 {
@@ -322,10 +244,22 @@ h2 {
     font-size: clamp(1.65rem, 7.5vw, 2.1rem);
   }
 
-  .subtitle,
+  .subtitle {
+    font-size: 0.96rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .cta-btn {
+    width: min(260px, 100%);
+    padding: 0.85rem 1rem;
+    font-size: 0.96rem;
+  }
+
   .message-output {
-    font-size: 0.95rem;
-    line-height: 1.65;
+    width: 100%;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin-bottom: 1.3rem;
   }
 
   .photo-gallery {
@@ -333,22 +267,33 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem;
   }
-
-  .cta-btn {
-    width: min(260px, 100%);
-    padding: 0.82rem 1rem;
-    font-size: 0.95rem;
-  }
 }
 
 @media (max-width: 380px) {
+  .hero,
+  .surprise {
+    width: min(900px, calc(100vw - 1rem));
+    padding: 1.2rem 0.75rem;
+    margin: 0.9rem auto;
+  }
+
+  .blur-1,
+  .blur-2 {
+    filter: blur(70px);
+    transform: scale(0.7);
+  }
+
+  .date-pill {
+    font-size: 0.64rem;
+    padding: 0.4rem 0.55rem;
+  }
+
   .photo-gallery {
     grid-template-columns: 1fr;
   }
 
-  .cake {
-    transform: scale(0.9);
-    transform-origin: center top;
-    margin-bottom: 0.4rem;
+  .photo-placeholder {
+    font-size: 0.85rem;
+    padding: 0.8rem;
   }
 }
